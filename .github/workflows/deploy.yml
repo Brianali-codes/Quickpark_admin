@@ -1,23 +1,24 @@
-name: Deploy to AwardSpace
+name: Deploy to FTP
 
 on:
   push:
     branches:
-      - main  # Change to your actual branch
+      - main  # Change this to your deployment branch
 
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Deploy via FTP
+      - name: Deploy Files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: ftp.yourdomain.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /home/www/  # Change this if your AwardSpace directory is different
+          server-dir: /home/www/htdocs/  # Ensure this is correct
+          ftp-passive: true
+          timeout: 120000  # Increase timeout to 120 seconds
+          dangerous-clean-slate: false  # Prevents deleting everything if a disconnect happens
