@@ -22,74 +22,130 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 </head>
+<style>
+        .card {
+            margin: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .img-responsive {
+			width: 150px;
+		}
+		.banner2{
+            background-color:black;
+			padding:20px;
+        }
+        .form-titles{
+            font-size:20px;
+            font-weight:bold;
+        }
+        .display2{
+            padding:20px;
+            height:100px;
+            border-width: 2px;
+            border-color:black;
+            border-style:solid;
+            width: 80%;
+        }
+        .display{
+            padding:20px;
+            height:40px;
+            border-width: 2px;
+            border-color:black;
+            border-style:solid;
+            width: 80%;
+        }
+        #form-div{
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            padding:20px;
+        }
+        .submit-btn{
+            width: 20%;
+            height:40px;
+            
+        }
+    </style>
 <body>
 <!-- banner -->
-	<div class="banner1">
-		<div class="container">
-			<div class="w3_agile_banner_top">
-				<div class="agile_phone_mail">
-					<ul>
-						<li><i class="fa fa-phone" aria-hidden="true"></i>+(254) 002 100 500</li>
-						<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@Companyonline.net">info@example.com</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="agileits_w3layouts_banner_nav">
-				<nav class="navbar navbar-default">
-					<div class="navbar-header navbar-left">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<h1><a class="navbar-brand" href="index.php"><img src="images/logo.png" class="img-responsive"></a></h1>
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-						<nav class="cl-effect-13" id="cl-effect-13">
-						<ul class="nav navbar-nav">
-							<li><a href="index.php">Home</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="portfolio.php">Products</a></li>
-							<li><a href="blog.php">Blog</a></li>
-							<li class="active"><a href="contact.php">Contact</a></li>
-						</ul>
-						
-					</nav>
-
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
+<div class="banner2">
+        <div class="container">
+            <div class="agileits_w3layouts_banner_nav">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header navbar-left">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a class="navbar-brand" href="index.php"><img src="images/logo2.png" class="img-responsive"></a></h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                        <nav class="cl-effect-13" id="cl-effect-13">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.php">Home</a></li>
+                                <li class=""><a href="portfolio.php">Apartments</a></li>
+                                <li><a href="blog.php">FAQs</a></li>
+                                <li><a href="contact.php">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
 <!-- //banner -->
 <!-- mail -->
 	<div class="mail">
 		<div class="container">
 			<h2 class="w3l_head w3l_head1">Contact Us</h2>
 
-			<?php
-				if (isset($_GET["sent"])) {
-					echo 
-					'<div class="alert alert-success" >
-                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                         <strong>SENT!! </strong><p> Thank you for your message. We will get back to you as soon as possible.</p>
-                    </div>'
-					;
-				}
-			?>
-				<div class="agileits_mail_grids">
-				<div class="agileits_mail_grid_left">
-					<form action="functions/contact.php" method="post">
-						<h4>Your Names*</h4>
-						<input type="text" name="names" placeholder="Names..." required="">
-						<h4>Your Email*</h4>
-						<input type="email" name="email" placeholder="Email..." required="">
-						<h4>Your Message*</h4>
-						<textarea placeholder="Message..." name="message"></textarea>
-						<input type="submit" name="submit" value="Send Message">
-					</form>
+                <form action="https://formsubmit.co/1a1785750ef7ef82cfc088ead032cada" method="POST" id="form-div"> 
+                    <p class="form-titles">Name.</p> 
+                    <input type="text" name="name" required placeholder="Your Name here..." class="display">
+                    <p class="form-titles">Email.</p>
+                    <input type="email" name="email" required placeholder="your Email here." class="display">
+                    <p class="form-titles">Message.</p>
+                    <input type="text" name="message" required placeholder="message here..." class="display2">
+                    <button type="submit" class="submit-btn">Send</button>
+                    <input type="hidden" name="_next" value="https://localhost/index.php">
+                </form>
 				</div>
 			</div>
 		</div>
@@ -97,13 +153,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //mail -->
 <!-- map -->
 	<div class="w3l-map">
-		<iframe width="100%" height="300" src="https://maps.google.com/maps?width=100%&amp;height=300&amp;hl=en&amp;q=Relaince%20center%20%2C%20Woodvale%20Grove%2C%20Westlands%20-%20Nairobi%2C%20Kenya+(Company%20Offices)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+		<iframe width="100%" height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15926.4164107352!2d36.9395182!3d-1.2546377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f159948e69aeb%3A0xc63a8b3f37609fc6!2sChrist+miracle!5e0!3m2!1sen!2ske!4v1673511082847!5m2!1sen!2ske" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 	</div>
 <!-- map -->
 
 <!-- footer -->
-	
 	<?php 
 		include("footer.php");
 	?>
-
+</body>
+</html>

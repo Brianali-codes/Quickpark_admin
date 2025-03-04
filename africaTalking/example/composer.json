@@ -1,9 +1,14 @@
 {
-    "name": "africastalking-example",
-    "description": "Simple SDK usage",
+    "name": "example/africastalking",
+    "type": "project",
     "require": {
-        "php": ">=5.3.0",
-        "africastalking/africastalking": "dev-develop",
-        "altorouter/altorouter": "1.1.0"
-    }
+        "africastalking/africastalking": "^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Example\\Africastalking\\": "views/"
+        }
+    },
+    "minimum-stability": "stable"
 }

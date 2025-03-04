@@ -113,7 +113,7 @@
 							<div class="text-center">
 													
 								
-								<form method="POST" action="alogin.php">
+								<form method="POST" action="login.php">
 									<div  class="login-element">
 											<label for="email">Member ID:</label>
 											<input type="text" name="attempt" readonly="true" hidden="true" value="<?php echo $attempt; ?>">

@@ -13,6 +13,7 @@ $output1= $parse_url[0];
 header($output1);
 */
 
+/*
 $user="acenyakundi";
 $Key="4W26PsOgnySBnwf9CZJgEo2K5PyVq9KSBSiLfgCH8w3BHNE0mI";
 $senderId="SMARTLINK";
@@ -52,18 +53,18 @@ $output = curl_error($ch);
 curl_close($ch);
 
 
+*/
 
 
 
 
-/*
 //AFRICAS TALKING API
 require "src/AfricasTalking.php";
 
 use AfricasTalking\SDK\AfricasTalking;
 
 $username = 'sandbox'; // use 'sandbox' for development in the test environment
-$apiKey   = '4be71459df019c64c3a224caea2c539f40426f4cbe883bc30ba7b516381547d0'; // use your sandbox app API key for development in the test environment
+$apiKey   = 'atsk_d9496e0b08e93a66685d173bdcd3ac75083c840063aefb2873be03da817dbcb7fe499d7f'; // use your sandbox app API key for development in the test environment
 $AT       = new AfricasTalking($username, $apiKey);
 
 // Get one of the services
@@ -76,5 +77,5 @@ $result   = $sms->send([
 ]);
 
 print_r($result);
-*/
+
 ?>
