@@ -3,7 +3,7 @@ name: Deploy to FTP
 on:
   push:
     branches:
-      - main  # Change this to your deployment branch
+      - main  # Change this if your deployment branch is different
 
 jobs:
   ftp-deploy:
@@ -15,10 +15,13 @@ jobs:
       - name: Deploy Files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.yourdomain.com
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /home/www/htdocs/  # Ensure this is correct
-          ftp-passive: true
-          timeout: 120000  # Increase timeout to 120 seconds
+          protocol: ftps  # Use 'ftps' instead of 'ftp' if supported
+          port: 21  # Check your hosting provider for the correct port
+          local-dir: ./  # Change to your build directory if needed
+          server-dir: /home/www/htdocs/  # Change based on your server setup
+          timeout: 600000  # Set timeout to 10 minutes (600000 ms)
           dangerous-clean-slate: false  # Prevents deleting everything if a disconnect happens
+          log-level: verbose  # Gives detailed logs for debugging
